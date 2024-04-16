@@ -2,8 +2,8 @@ namespace ControlLaboral.Models
 {
     public class Employee {
         public int Id {get; set; }
-        public string Name {get; set; }
-        public string LastName {get; set; }
+        public string Names {get; set; }
+        public string LastNames {get; set; }
         public System.DateTime BirthDate {get; set; }
         public string Email {get; set; }
         public string Password {get; set; }

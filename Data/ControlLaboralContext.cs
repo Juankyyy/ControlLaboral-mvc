@@ -9,10 +9,7 @@ namespace ControlLaboral.Data
         {
 
         }
-            //Modelo de la tabla empleados
+        //Modelo de la tabla empleados
         public DbSet<Employee> Employees { get; set; }
-
-        //Agregar el modelo de la tabla TimeControl
-        //public DbSet<TimeControl> TimeControls {get; set; }
     }
 }

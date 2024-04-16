@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ControlLaboral")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69f48ec3c9ef5f09fc41d49329cb8fdba272bf6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dd5b137edb85d815b2139fe9b11cb01685a42a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ControlLaboral")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ControlLaboral")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,15 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using ControlLaboral.Data;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ControlLaboralContext> (options =>
+    options.UseMySql (
+        builder.Configuration.GetConnectionString("MySqlConnection"),
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
+    )
+);
 
 var app = builder.Build();
 
