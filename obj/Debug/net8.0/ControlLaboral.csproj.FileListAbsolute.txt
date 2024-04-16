@@ -1,0 +1,9 @@
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.csproj.AssemblyReference.cache
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.GeneratedMSBuildEditorConfig.editorconfig
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.AssemblyInfoInputs.cache
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.AssemblyInfo.cs
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.csproj.CoreCompileInputs.cache
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.MvcApplicationPartsAssemblyInfo.cache
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.RazorAssemblyInfo.cache
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.RazorAssemblyInfo.cs
+/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/Debug/net8.0/ControlLaboral.sourcelink.json
