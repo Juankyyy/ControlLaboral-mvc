@@ -1,5 +1,7 @@
-using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ControlLaboral.Data;
+using ControlLaboral.Models;
 
 namespace ControlLaboral.Controllers
 {

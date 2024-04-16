@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/ControlLaboral.csproj": {}
+    "C:\\Users\\Juanky\\Documents\\Code\\CSharp\\ASP\\ControlLaboral-mvc\\ControlLaboral.csproj": {}
   },
   "projects": {
-    "/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/ControlLaboral.csproj": {
+    "C:\\Users\\Juanky\\Documents\\Code\\CSharp\\ASP\\ControlLaboral-mvc\\ControlLaboral.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/ControlLaboral.csproj",
+        "projectUniqueName": "C:\\Users\\Juanky\\Documents\\Code\\CSharp\\ASP\\ControlLaboral-mvc\\ControlLaboral.csproj",
         "projectName": "ControlLaboral",
-        "projectPath": "/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/ControlLaboral.csproj",
-        "packagesPath": "/home/riwip5-037/.nuget/packages/",
-        "outputPath": "/home/riwip5-037/Desktop/Juanky/ControlLaboral-mvc/obj/",
+        "projectPath": "C:\\Users\\Juanky\\Documents\\Code\\CSharp\\ASP\\ControlLaboral-mvc\\ControlLaboral.csproj",
+        "packagesPath": "C:\\Users\\Juanky\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Juanky\\Documents\\Code\\CSharp\\ASP\\ControlLaboral-mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/riwip5-037/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Juanky\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -45,7 +45,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.3, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/riwip5-037/.dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
