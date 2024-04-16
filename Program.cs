@@ -11,6 +11,8 @@ builder.Services.AddDbContext<ControlLaboralContext> (options =>
     )
 );
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +32,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Landing}/{action=Index}");
 
 app.Run();
