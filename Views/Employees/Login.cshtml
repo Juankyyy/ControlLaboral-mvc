@@ -1,0 +1,25 @@
+@model Employee;
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="content-center">
+    <form class="form" asp-action="LoginVerificar" method="get">
+        <h2>Iniciar Sesión</h2>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Email" name="email">
+            <label class="form-floating-label" for="floatingInput">Email</label>
+        </div>
+        
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" asp-for="Password" name="password">
+            <label class="form-floating-label" for="floatingPassword">Password</label>
+        </div>
+
+        <button class="btn btn-primary">Iniciar Sesión</button>
+        <span class="text-danger">@ViewBag.Danger</span>
+
+        <p>No tienes cuenta? <a asp-action="Register">Regístrate</a></p>
+    </form>
+</div>

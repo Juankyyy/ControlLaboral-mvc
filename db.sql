@@ -14,7 +14,7 @@ CREATE TABLE Employees (
 );
 
 INSERT INTO Employees (Names, LastNames, Email, Password, DocumentNumber, Gender, Birthdate, Job)
-VALUES ("Juanky", "Herrera", "juanky@gmail.com" "juanky123", "1025643816", "Masculino", "2005-02-03", "Admin"),
+VALUES ("Juanky", "Herrera", "juanky@gmail.com", "juanky123", "1025643816", "Masculino", "2005-02-03", "Admin"),
 ("Mateo", "Velez", "mateo@gmail.com", "mateo123", "1020246127", "Masculino", "2002-02-01", "Admin"),
 ("Wilmar", "Puerta", "wilmar@gmail.com", "wilmar123", "1024823194", "Masculino", "2002-03-06", "Empleado")
 
