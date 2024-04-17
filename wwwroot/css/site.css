@@ -35,8 +35,7 @@ body {
 }
 
 
-/* Login */
-
+/* LOGIN */
 .form {
   display: flex;
   flex-direction: column;
@@ -46,5 +45,12 @@ body {
 
   .form-floating-label {
     color: #000;
+  }
+}
+
+/* CREATE */
+.form {
+  .form-floating, select, .inputDate {
+    width: 100%;
   }
 }

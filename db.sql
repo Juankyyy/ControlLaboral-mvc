@@ -1,3 +1,4 @@
+-- SQLBook: Code
 USE bkcgurx7j7va674tuqsg;
 DROP TABLE Employees;
 TRUNCATE TABLE Employees;
@@ -34,3 +35,12 @@ CREATE TABLE TimeControls (
     UserId INT NOT NULL,
     FOREIGN KEY (UserId) REFERENCES Employees(Id)
 );
+CREATE TABLE History (
+    Id int PRIMARY KEY AUTO_INCREMENT,
+    DateEntry DATETIME NOT NULL,
+    DateExit DATETIME NOT NULL,
+    TimeControlId INT NOT NULL,
+    FOREIGN KEY (TimeControlId) REFERENCES TimeControls(Id)
+);
+DROP TABLE History;
+SELECT * FROM History;

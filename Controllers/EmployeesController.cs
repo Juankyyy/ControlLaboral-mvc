@@ -40,15 +40,24 @@ namespace ControlLaboral.Controllers
             return View("Login");
         }
 
-        public IActionResult Register()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(Employee employee)
+        public async Task<IActionResult> Create(Employee employee)
         {
-            await _context.Employees
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Employees");
+        }
+
+        public async Task<IActionResult> Delete(Employee employee)
+        {
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Employees");
         }
     }
 }

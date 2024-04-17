@@ -1,0 +1,56 @@
+@model Employee
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="content-center">
+    <form class="form" asp-action="Create" method="post">
+        <h2>Crear nuevo Empleado</h2>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Names">
+            <label class="form-floating-label" for="floatingInput">Names</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="LastNames">
+            <label class="form-floating-label" for="floatingInput">Last Names</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Email">
+            <label class="form-floating-label" for="floatingInput">Email</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" asp-for="Password">
+            <label class="form-floating-label" for="floatingPassword">Password</label>
+        </div>
+
+        <div class="form-floating">
+            <input type="number" class="form-control" id="floatingPassword" placeholder="Document Number" asp-for="DocumentNumber">
+            <label class="form-floating-label" for="floatingPassword">Document Number</label>
+        </div>
+
+        <select class="form-select" asp-for="Gender">
+            <option disabled selected>Género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+
+        <select class="form-select" asp-for="Job">
+            <option disabled selected>Cargo</option>
+            <option value="Empleado">Empleado</option>
+            <option value="Administrador">Administrador</option>
+        </select>
+
+        <div class="inputDate">
+            <label>Fecha de nacimiento:</label>
+            <input class="form-control" type="date">
+        </div>
+
+        <button class="btn btn-primary">Registrarse</button>
+
+        <p>Ya tienes una cuenta? <a asp-action="Login">Incia Sesión</a></p>
+    </form>
+</div>
