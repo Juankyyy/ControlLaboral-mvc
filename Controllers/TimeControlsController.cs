@@ -16,7 +16,10 @@ namespace ControlLaboral.Controllers
         //Apartado para mostar la tabla de empleados 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employees.ToListAsync());
+            return View(await _context.TimeControls.ToListAsync());
         }
+        //Agregamos el registro de la entrada
+        
+
     }
 }

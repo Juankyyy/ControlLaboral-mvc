@@ -16,6 +16,8 @@ namespace ControlLaboral.Controllers
         //Apartado para mostar la tabla de empleados 
         public async Task<IActionResult> Index()
         {
+            string name = HttpContext.Session.GetString("Name");
+            ViewBag.Text = name;
             return View(await _context.Employees.ToListAsync());
         }
 
@@ -27,19 +29,22 @@ namespace ControlLaboral.Controllers
         
         public IActionResult LoginVerificar(string email, string password)
         {
-            var employees = _context.Employees.AsQueryable();
+            var employee = _context.Employees.FirstOrDefault(e => e.Email == email && e.Password == password);
 
+            // var employees = _context.Employees.AsQueryable();
 
-            if (employees.Any(e => e.Email == email && e.Password == password))
+            if (employee != null)
             {
-                return RedirectToAction("Index", "Employees");
+                HttpContext.Session.SetString("Job", employee.Job);
+                HttpContext.Session.SetString("EmailUser", email);
+                return RedirectToAction("Index");
             } else {
                 ViewBag.Danger = "Ingresa un correo o contraseña correctos";
             }
 
             return View("Login");
         }
-
+        //En este apartado usamos el crear para registar
         public IActionResult Create()
         {
             return View();

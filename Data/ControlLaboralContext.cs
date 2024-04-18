@@ -11,6 +11,6 @@ namespace ControlLaboral.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        // public DbSet<TimeControl> TimeControls {get; set; }
+        public DbSet<TimeControl> TimeControls {get; set; }
     }
 }

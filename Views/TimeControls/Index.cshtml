@@ -1,0 +1,31 @@
+@{
+    ViewBag.Title = "Time Control";
+}
+
+<div class="container">
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Entrada</th>
+            <th>Salida</th>
+            <th>User ID</th>
+            <th>Actions</th>
+        </thead>
+        @foreach (var timecontrol in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@timecontrol.Id</td>
+                    <td>@timecontrol.DateEntry</td>
+                    <td>@timecontrol.DateExit</td>
+                    <td>@timecontrol.UserId</td>
+                    <td>
+                        <!-- <a class="btn btn-sm btn-info" asp-controller="TimeControls" asp-action="Details" asp-route-id="@timecontrol.Id">Details</a> -->
+                        <a class="btn btn-sm btn-danger" asp-controller="TimeControls" asp-action="Delete" asp-route-id="@timecontrol.Id">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

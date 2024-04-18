@@ -11,7 +11,16 @@ builder.Services.AddDbContext<ControlLaboralContext> (options =>
     )
 );
 
+//Añadimos los sevicios de la session
+builder.Services.AddDistributedMemoryCache();
 
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = ".AdventureWorks.Session";
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+//Final de los servicios de la session
 
 var app = builder.Build();
 
@@ -29,6 +38,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+//Agregamos el app para habilitar la 
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
