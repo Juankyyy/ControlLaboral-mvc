@@ -1,5 +1,5 @@
 @{
-    ViewBag.Title = "Time Control";
+    ViewBag.Title = "Empleados";
 }
 
 <div class="container">
@@ -22,8 +22,8 @@
                     <td>@employee.DocumentNumber</td>
                     <td>@employee.Job</td>
                     <td>
-                        <!-- <a class="btn btn-sm btn-info" asp-controller="Employees" asp-action="Details" asp-route-id="@employee.Id">Details</a> -->
-                        <a class="btn btn-sm btn-danger" asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@employee.Id">Details</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
                     </td>
                 </tr>
             </tbody>

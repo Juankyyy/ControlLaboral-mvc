@@ -1,0 +1,12 @@
+@{
+    ViewBag.Title = "DashBoard Empleado";
+}
+
+<div class="content-center">
+    <p>@ViewBag.employeeName</p>
+
+    <div class="buttons d-flex gap-3">
+        <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry">Registrar Entrada</a>
+        <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
+    </div>
+</div>

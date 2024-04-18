@@ -32,6 +32,9 @@ CREATE TABLE TimeControls (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     DateEntry DATETIME NOT NULL,
     DateExit DATETIME NOT NULL,
-    UserId INT NOT NULL,
-    FOREIGN KEY (UserId) REFERENCES Employees(Id)
+    -- UserId INT NOT NULL,
+    -- FOREIGN KEY (UserId) REFERENCES Employees(Id)
 );
+
+INSERT INTO TimeControls (DateEntry, DateExit, UserId)
+VALUES (NOW(), "2024-04-18 01:40:02.047", 1)

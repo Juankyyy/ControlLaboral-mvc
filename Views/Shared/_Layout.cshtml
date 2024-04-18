@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,6 +29,12 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="TimeControls" asp-action="Index">Control de Horario</a>
                         </li>
+                        @if (Context.Session.GetString("Job") == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Landing" asp-action="Admin">Admin</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

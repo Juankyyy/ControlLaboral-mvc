@@ -7,42 +7,48 @@
     <form class="form" asp-action="Create" method="post">
         <h2>Crear nuevo Empleado</h2>
 
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Names">
-            <label class="form-floating-label" for="floatingInput">Names</label>
-        </div>
+        <div class="inputGroup">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Names">
+                <label class="form-floating-label" for="floatingInput">Nombres</label>
+            </div>
 
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="LastNames">
-            <label class="form-floating-label" for="floatingInput">Last Names</label>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="LastNames">
+                <label class="form-floating-label" for="floatingInput">Apellidos</label>
+            </div>
         </div>
+        
+        <div class="inputGroup">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Email">
+                <label class="form-floating-label" for="floatingInput">Correo</label>
+            </div>
 
-        <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Email">
-            <label class="form-floating-label" for="floatingInput">Email</label>
-        </div>
-
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" asp-for="Password">
-            <label class="form-floating-label" for="floatingPassword">Password</label>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" asp-for="Password">
+                <label class="form-floating-label" for="floatingPassword">Contraseña</label>
+            </div>
         </div>
 
         <div class="form-floating">
             <input type="number" class="form-control" id="floatingPassword" placeholder="Document Number" asp-for="DocumentNumber">
-            <label class="form-floating-label" for="floatingPassword">Document Number</label>
+            <label class="form-floating-label" for="floatingPassword">Número de Documento</label>
         </div>
 
-        <select class="form-select" asp-for="Gender">
-            <option disabled selected>Género</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-        </select>
+        <div class="inputGroup">
+            <select class="form-select" asp-for="Gender">
+                <option disabled selected>Género</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
 
-        <select class="form-select" asp-for="Job">
-            <option disabled selected>Cargo</option>
-            <option value="Empleado">Empleado</option>
-            <option value="Administrador">Administrador</option>
-        </select>
+            <select class="form-select" asp-for="Job">
+                <option disabled selected>Cargo</option>
+                <option value="Empleado">Empleado</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+        </div>
 
         <div class="inputDate">
             <label>Fecha de nacimiento:</label>

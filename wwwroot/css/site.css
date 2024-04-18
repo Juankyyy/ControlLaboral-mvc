@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 75px);
 }
 
 /* LANDING */
@@ -48,9 +48,15 @@ body {
   }
 }
 
+/* REGISTER */
+.inputGroup {
+  display: flex;
+  gap: 30px;
+}
+
 /* CREATE */
 .form {
   .form-floating, select, .inputDate {
-    width: 100%;
+    width: 330px;
   }
 }

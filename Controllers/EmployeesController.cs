@@ -16,9 +16,14 @@ namespace ControlLaboral.Controllers
         //Apartado para mostar la tabla de empleados 
         public async Task<IActionResult> Index()
         {
-            string name = HttpContext.Session.GetString("Name");
-            ViewBag.Text = name;
-            return View(await _context.Employees.ToListAsync());
+            var admin = HttpContext.Session.GetString("Job");
+
+            if (admin == "Admin")
+            {
+                return View(await _context.Employees.ToListAsync());
+            } else {
+                return RedirectToAction("Details", new { id = HttpContext.Session.GetString("UserId") });
+            }
         }
 
         public IActionResult Login()
@@ -31,13 +36,20 @@ namespace ControlLaboral.Controllers
         {
             var employee = _context.Employees.FirstOrDefault(e => e.Email == email && e.Password == password);
 
-            // var employees = _context.Employees.AsQueryable();
-
             if (employee != null)
             {
                 HttpContext.Session.SetString("Job", employee.Job);
-                HttpContext.Session.SetString("EmailUser", email);
-                return RedirectToAction("Index");
+                HttpContext.Session.SetString("UserId", employee.Id.ToString());
+                
+                var admin = HttpContext.Session.GetString("Job");
+
+                if (admin == "Admin")
+                {
+                    return RedirectToAction("Admin", "Landing");
+                } else {
+                    return RedirectToAction("Details", new { id = employee.Id });
+                }
+
             } else {
                 ViewBag.Danger = "Ingresa un correo o contraseña correctos";
             }
@@ -55,14 +67,21 @@ namespace ControlLaboral.Controllers
         {
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Employees");
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(Employee employee)
         {
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index", "Employees");
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var employee = _context.Employees.Find(id);
+            ViewBag.employeeName = employee.Names;
+            return View(employee);
         }
     }
 }
