@@ -7,12 +7,22 @@ namespace ControlLaboral.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Session.GetString("Job") == "Admin")
+            {
+                return RedirectToAction("Admin");
+            } else {
+                return View();
+            }
         }
 
         public IActionResult Admin()
         {
-            return View();
+            if (HttpContext.Session.GetString("Job") == "Admin")
+            {
+                return View();
+            } else {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

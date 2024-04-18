@@ -4,7 +4,7 @@
 }
 
 <div class="content-center">
-    <form class="form" asp-action="LoginVerificar" method="get">
+    <form class="form" asp-action="LoginCheck" method="get">
         <h2>Iniciar Sesión</h2>
 
         <div class="form-floating mb-3">
@@ -20,6 +20,6 @@
         <button class="btn btn-primary">Iniciar Sesión</button>
         <span class="text-danger">@ViewBag.Danger</span>
 
-        <p>No tienes cuenta? <a asp-action="Create">Regístrate</a></p>
+        @* <p>No tienes cuenta? <a asp-action="Create">Regístrate</a></p> *@
     </form>
 </div>

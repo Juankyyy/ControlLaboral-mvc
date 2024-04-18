@@ -16,14 +16,40 @@ namespace ControlLaboral.Controllers
         //Apartado para mostar la tabla de empleados 
         public async Task<IActionResult> Index()
         {
-            var admin = HttpContext.Session.GetString("Job");
-
-            if (admin == "Admin")
+            if (HttpContext.Session.GetString("Job") == "Admin")
             {
                 return View(await _context.Employees.ToListAsync());
             } else {
                 return RedirectToAction("Details", new { id = HttpContext.Session.GetString("UserId") });
             }
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var employee = _context.Employees.Find(id);
+            ViewBag.employeeName = employee.Names;
+            return View(employee);
+        }
+
+        public async Task<IActionResult> Delete(Employee employee)
+        {
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        //En este apartado usamos el crear para registar
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Employee employee)
+        {
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Login()
@@ -32,7 +58,7 @@ namespace ControlLaboral.Controllers
         }
 
         
-        public IActionResult LoginVerificar(string email, string password)
+        public IActionResult LoginCheck(string email, string password)
         {
             var employee = _context.Employees.FirstOrDefault(e => e.Email == email && e.Password == password);
 
@@ -56,32 +82,12 @@ namespace ControlLaboral.Controllers
 
             return View("Login");
         }
-        //En este apartado usamos el crear para registar
-        public IActionResult Create()
-        {
-            return View();
-        }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(Employee employee)
+        public IActionResult SignOut()
         {
-            _context.Employees.Add(employee);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
+            HttpContext.Session.Clear();
 
-        public async Task<IActionResult> Delete(Employee employee)
-        {
-            _context.Employees.Remove(employee);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
-
-        public async Task<IActionResult> Details(int id)
-        {
-            var employee = _context.Employees.Find(id);
-            ViewBag.employeeName = employee.Names;
-            return View(employee);
+            return RedirectToAction("Index", "Landing");
         }
     }
 }

@@ -2,6 +2,11 @@
     ViewBag.Title = "Administrador";
 }
 
+<div class="menu">
+    <a class="btn btn-danger" asp-controller="Employees" asp-action="SignOut">Cerrar Sesión</a>
+    <a class="btn btn-primary" asp-controller="Employees" asp-action="Create">Crear nuevo usuario</a>
+</div>
+
 <div class="content-center">
     <div class="buttons d-flex gap-3">
         <a class="btn btn-primary" asp-controller="Employees" asp-action="Index">Empleados</a>

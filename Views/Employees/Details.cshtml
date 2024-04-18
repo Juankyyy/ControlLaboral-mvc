@@ -1,12 +1,40 @@
 @{
     ViewBag.Title = "DashBoard Empleado";
+    if (Context.Session.GetString("Job") != "Admin")
+    {
+        Layout = null;
+    }
 }
 
-<div class="content-center">
-    <p>@ViewBag.employeeName</p>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="buttons d-flex gap-3">
-        <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry">Registrar Entrada</a>
-        <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="menu mt-4">
+        <a class="btn btn-danger" asp-controller="Employees" asp-action="SignOut">Cerrar Sesión</a>
     </div>
-</div>
+
+    <div class="content-center">
+        <p>@ViewBag.employeeName</p>
+
+        <div class="buttons d-flex gap-3">
+            <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry">Registrar Entrada</a>
+            <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+
+</html>

@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand"asp-controller="Landing" asp-action="Index">
+                <a class="navbar-brand" asp-controller="Landing" asp-action="Index">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z"/></svg>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -23,16 +23,14 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Employees" asp-action="Index">Empleados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="TimeControls" asp-action="Index">Control de Horario</a>
-                        </li>
                         @if (Context.Session.GetString("Job") == "Admin")
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Landing" asp-action="Admin">Admin</a>
+                                <a class="nav-link" asp-controller="Employees" asp-action="Index">Empleados</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="TimeControls" asp-action="Index">Control de Horario</a>
                             </li>
                         }
                     </ul>
