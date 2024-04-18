@@ -18,8 +18,14 @@ namespace ControlLaboral.Controllers
         {
             return View(await _context.TimeControls.ToListAsync());
         }
-        //Agregamos el registro de la entrada
-        
+        // Agregamos el registro de la entrada
+        // Agregamos los detalles de la tabla
+        public async Task<IActionResult> Details(int? id)
+        {
+            return View(await _context.TimeControls.FirstOrDefaultAsync(m => m.Id == id));
+        }
+        //Agregamos la funcion para mandar la información de la Entraday la salida a la tabla
+        //
 
     }
 }

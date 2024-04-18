@@ -11,6 +11,7 @@ namespace ControlLaboral.Controllers
             {
                 return RedirectToAction("Admin");
             } else {
+                ViewBag.Hora = ;
                 return View();
             }
         }

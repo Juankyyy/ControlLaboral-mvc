@@ -31,7 +31,7 @@ TRUNCATE TABLE TimeControls;
 CREATE TABLE TimeControls (
     Id INT PRIMARY KEY AUTO_INCREMENT,
     DateEntry DATETIME NOT NULL,
-    DateExit DATETIME NOT NULL,
+    DateExit DATETIME,
     -- UserId INT NOT NULL,
     -- FOREIGN KEY (UserId) REFERENCES Employees(Id)
 );

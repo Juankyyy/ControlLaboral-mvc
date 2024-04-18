@@ -1,5 +1,6 @@
 @{
     ViewBag.Title = "DashBoard Empleado";
+
     if (Context.Session.GetString("Job") != "Admin")
     {
         Layout = null;
@@ -24,12 +25,14 @@
     </div>
 
     <div class="content-center">
-        <p>@ViewBag.employeeName</p>
+        <h3>@ViewBag.employeeName</h3>
 
         <div class="buttons d-flex gap-3">
             <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry">Registrar Entrada</a>
             <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
         </div>
+
+        <a class="btn btn-primary mt-3" asp-controller="TimeControls" asp-action="Index">Historial</a>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
