@@ -35,7 +35,7 @@ namespace ControlLaboral.Controllers
             // tcontrol.DateExit = null;
             tcontrol.UserId = Int32.Parse(userId);
             //Arregalr ViewBag
-            ViewBag.MessageRegisterEntry =  "Se registró correctamente";
+            ViewBag.MessageRegisterEntry = "Se registró correctamente";
 
             _context.TimeControls.Add(tcontrol);
             await _context.SaveChangesAsync();

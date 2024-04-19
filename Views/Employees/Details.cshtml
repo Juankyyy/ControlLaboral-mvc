@@ -33,7 +33,7 @@
             <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
         </div>
 
-        <a class="btn btn-primary mt-3" asp-controller="TimeControls" asp-action="Index">Historial</a>
+        <a class="btn btn-primary mt-3" asp-controller="TimeControls" asp-action="Index" asp-route-id="@ViewBag.UserId">Historial</a>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

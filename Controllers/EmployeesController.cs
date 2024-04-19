@@ -31,7 +31,7 @@ namespace ControlLaboral.Controllers
             return View(employee);
         }
 
-        public async Task<IActionResult> Delete(Employee employee)
+        public async Task<IActionResult> Delete(Employee employee) //Agregar Vista de borrar o un modal
         {
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();

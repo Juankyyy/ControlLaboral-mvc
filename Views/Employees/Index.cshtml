@@ -24,10 +24,32 @@
                     <td>@employee.Job</td>
                     <td>
                         <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@employee.Id">Details</a>
-                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
+                        <a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a> 
                     </td>
                 </tr>
             </tbody>
         }
     </table>
+</div>
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Eliminar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Deseas eliminar al usuario: </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" asp-action="Delete">Eliminar</button>
+            </div>
+        </div>
+    </div>
 </div>
