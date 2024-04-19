@@ -24,8 +24,29 @@ namespace ControlLaboral.Controllers
         {
             return View(await _context.TimeControls.FirstOrDefaultAsync(m => m.Id == id));
         }
-        //Agregamos la funcion para mandar la información de la Entraday la salida a la tabla
-        //
+        // Agregamos Funcionalidad del boton Registrar entrada
+        
+        public async Task<IActionResult> RegisterEntry(int id)
+        {
+            var tcontrol = new TimeControl();
+            var userId = HttpContext.Session.GetString("UserId");
+            
+            tcontrol.DateEntry = DateTime.Now;
+            // tcontrol.DateExit = null;
+            tcontrol.UserId = Int32.Parse(userId);
+            //Arregalr ViewBag
+            ViewBag.MessageRegisterEntry =  "Se registró correctamente";
 
+            _context.TimeControls.Add(tcontrol);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Details", "Employees");
+
+        }
+            //Agregamos el apartadod de eliminar
+            public async Task<IActionResult> Delete(TimeControl tcontrol){
+                _context.TimeControls.Remove(tcontrol);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index", "Employees");
+            }
     }
 }

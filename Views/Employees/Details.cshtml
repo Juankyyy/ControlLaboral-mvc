@@ -1,5 +1,6 @@
 @{
-    ViewBag.Title = "DashBoard Empleado";
+    ViewBag.Title = "Dashboard Empleado";
+    ViewBag.Favicon = "detailsEmployee.svg";
 
     if (Context.Session.GetString("Job") != "Admin")
     {
@@ -16,7 +17,7 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon/@ViewData["Favicon"]">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <h3>@ViewBag.employeeName</h3>
 
         <div class="buttons d-flex gap-3">
-            <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry">Registrar Entrada</a>
+            <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterEntry" asp-route-id="@ViewBag.UserId">Registrar Entrada</a>
             <a class="btn btn-primary" asp-controller="TimeControls" asp-action="RegisterExit">Registrar Salida</a>
         </div>
 

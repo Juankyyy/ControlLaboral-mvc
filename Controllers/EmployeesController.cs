@@ -26,7 +26,7 @@ namespace ControlLaboral.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var employee = _context.Employees.Find(id);
+            var employee = _context.Employees.Find(Int32.Parse(HttpContext.Session.GetString("UserId")));
             ViewBag.employeeName = employee.Names;
             return View(employee);
         }
