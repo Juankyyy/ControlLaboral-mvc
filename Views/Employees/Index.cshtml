@@ -24,32 +24,31 @@
                     <td>@employee.Job</td>
                     <td>
                         <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@employee.Id">Details</a>
-                        <a class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a> 
+                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#@employee.Names">Delete</button>
                     </td>
                 </tr>
             </tbody>
+
+            <div class="modal fade" id="@employee.Names" tabindex="-1" aria-labelledby="deleteModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Eliminar Usuario con ID: @employee.Id</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Deseas eliminar al usuario: @employee.Names</p>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" asp-action="Delete" asp-route-id="@employee.Id">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
     </table>
-</div>
-<!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>-->
-
-<!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content text-dark">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Eliminar Usuario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Deseas eliminar al usuario: </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" asp-action="Delete">Eliminar</button>
-            </div>
-        </div>
-    </div>
 </div>

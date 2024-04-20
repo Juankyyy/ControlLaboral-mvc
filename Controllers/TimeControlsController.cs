@@ -28,25 +28,34 @@ namespace ControlLaboral.Controllers
         
         public async Task<IActionResult> RegisterEntry(int id)
         {
-            var tcontrol = new TimeControl();
             var userId = HttpContext.Session.GetString("UserId");
+            var tcontrol = new TimeControl();
             
             tcontrol.DateEntry = DateTime.Now;
             // tcontrol.DateExit = null;
             tcontrol.UserId = Int32.Parse(userId);
-            //Arregalr ViewBag
-            ViewBag.MessageRegisterEntry = "Se registró correctamente";
 
             _context.TimeControls.Add(tcontrol);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Details", "Employees");
+            return RedirectToAction("Details", "Employees", new { id = HttpContext.Session.GetString("UserId") });
 
         }
-            //Agregamos el apartadod de eliminar
-            public async Task<IActionResult> Delete(TimeControl tcontrol){
-                _context.TimeControls.Remove(tcontrol);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Employees");
-            }
+
+        // public async Task<IActionResult> RegisterExit(int id)
+        // {
+        //     var userId = HttpContext.Session.GetString("UserId");
+
+
+        //     _context.TimeControls.Add(tcontrol);
+        //     await _context.SaveChangesAsync();
+        //     return RedirectToAction("Details", "Employees", new { id = HttpContext.Session.GetString("UserId") });
+        // }
+
+            //Agregamos el apartado de eliminar TimeControl
+        public async Task<IActionResult> Delete(TimeControl tcontrol){
+            _context.TimeControls.Remove(tcontrol);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

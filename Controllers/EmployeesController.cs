@@ -26,7 +26,7 @@ namespace ControlLaboral.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var employee = _context.Employees.Find(Int32.Parse(HttpContext.Session.GetString("UserId")));
+            var employee = _context.Employees.Find(id);
             ViewBag.employeeName = employee.Names;
             return View(employee);
         }
@@ -54,7 +54,17 @@ namespace ControlLaboral.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            if (HttpContext.Session.GetString("UserId") != null)
+            {
+                if (HttpContext.Session.GetString("Job") == "Admin")
+                {
+                    return RedirectToAction("Admin", "Landing");
+                } else {
+                    return RedirectToAction("Details", new { id = HttpContext.Session.GetString("UserId") });
+                }
+            } else {
+                return View();
+            }
         }
 
         
